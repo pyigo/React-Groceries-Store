@@ -1,10 +1,17 @@
 * {
   box-sizing: border-box;
+
   /* background-color: lightcoral; */
 }
-/* .whole-container{
 
+/* body {
+  background-color: #2196f3;
 } */
+
+h1 {
+  text-align: center;
+  color: blue;
+}
 
 .grid-container {
   display: grid;

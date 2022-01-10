@@ -31,6 +31,37 @@ class App extends React.Component {
         quantity: '',
         isPurchased: true
     }
+
+    // Every time we do something (type) inside the input, handleChange will be invoked
+    handleChange = (event) => {
+        console.log(event.target.value)
+
+        this.setState({
+            // 
+            [event.target.id]: event.target.value
+        })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const newItem = {
+            item: this.state.item,
+            brand: this.state.brand,
+            units: this.state.units,
+            quantity: this.state.quantity,
+            isPurchased: false
+        }
+        //console.log(newItem);
+
+        this.setState({
+            products: [newItem, ...this.state.products],
+            item: '',
+            brand: '',
+            units: '',
+            quantity: '',
+            isPurchased: true
+        })
+    }
     render() {
         console.log(this.props)
         return (
@@ -56,10 +87,9 @@ class App extends React.Component {
                                             <td>{p.brand}</td>
                                             <td>{p.units}</td>
                                             <td>{p.quantity}</td>
+                                            <td>{p.isPurchased}</td>
                                             <td>
-                                                {
-                                                    <input type="checkbox" id="isPurchased" value="{p.isPurchased}" />
-                                                }
+                                                <input type="checkbox" checked={p.isPurchased} />
                                             </td>
                                         </tr>
                                     )
@@ -70,14 +100,14 @@ class App extends React.Component {
                     <div clssName="item">
                         <h3>form</h3>
                         <form onSubmit={this.handleSubmit}>
-                            <label htmlFor='name'>Item: </label>
-                            <input id='item' type='text' value={this.state.item} onChange={this.handleChange} />
+                            <label htmlFor='item'>Item: </label>
+                            <input id='item' type='text' value={this.state.item} onChange={this.handleChange} /> <br />
                             <label htmlFor='price'>brand: </label>
-                            <input id='brand' type='text' value={this.state.brand} onChange={this.handleChange} />
+                            <input id='brand' type='text' value={this.state.brand} onChange={this.handleChange} /><br />
                             <label htmlFor='description'>units: </label>
-                            <input id='units' type='text' value={this.state.units} onChange={this.handleChange} />
+                            <input id='units' type='text' value={this.state.units} onChange={this.handleChange} /><br />
                             <label htmlFor='description'>quantity: </label>
-                            <input id='quantity' type='text' value={this.state.quantity} onChange={this.handleChange} />
+                            <input id='quantity' type='number' value={this.state.quantity} onChange={this.handleChange} /><br />
                             <input type='submit' />
                         </form>
                     </div>
@@ -92,7 +122,7 @@ class Shopping extends React.Component {
         // console.log('Cart', this.props.)
         return (
             <div>
-                <h1>{this.props.product}</h1>
+
             </div>
         )
     }
