@@ -4,9 +4,11 @@
   /* background-color: lightcoral; */
 }
 
-/* body {
-  background-color: #2196f3;
-} */
+body {
+  /* background-color: #edddd4; */
+  /* linear background copied from https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/linear-gradient()#gradient_that_starts_at_60_of_the_gradient_line */
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+}
 
 h1 {
   text-align: center;

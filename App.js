@@ -32,7 +32,7 @@ class App extends React.Component {
         isPurchased: true
     }
 
-    // Every time we do something (type) inside the input, handleChange will be invoked
+
     handleChange = (event) => {
         console.log(event.target.value)
 
@@ -66,7 +66,7 @@ class App extends React.Component {
         console.log(this.props)
         return (
             <div className="whole-container">
-                <h1>LIST</h1>
+                <h1>GROCERIES LIST</h1>
 
                 <div className="grid-container">
                     <div className="item">
@@ -98,15 +98,15 @@ class App extends React.Component {
                         </table>
                     </div>
                     <div clssName="item">
-                        <h3>form</h3>
+                        <h3>Form</h3>
                         <form onSubmit={this.handleSubmit}>
                             <label htmlFor='item'>Item: </label>
                             <input id='item' type='text' value={this.state.item} onChange={this.handleChange} /> <br />
-                            <label htmlFor='price'>brand: </label>
+                            <label htmlFor='price'>Brand: </label>
                             <input id='brand' type='text' value={this.state.brand} onChange={this.handleChange} /><br />
-                            <label htmlFor='description'>units: </label>
+                            <label htmlFor='description'>Units: </label>
                             <input id='units' type='text' value={this.state.units} onChange={this.handleChange} /><br />
-                            <label htmlFor='description'>quantity: </label>
+                            <label htmlFor='description'>Quantity: </label>
                             <input id='quantity' type='number' value={this.state.quantity} onChange={this.handleChange} /><br />
                             <input type='submit' />
                         </form>
@@ -117,16 +117,16 @@ class App extends React.Component {
     }
 }
 
-class Shopping extends React.Component {
-    render() {
-        // console.log('Cart', this.props.)
-        return (
-            <div>
+// class Shopping extends React.Component {
+//     render() {
+//         // console.log('Cart', this.props.)
+//         return (
+//             <div>
 
-            </div>
-        )
-    }
-}
+//             </div>
+//         )
+//     }
+// }
 
 ReactDOM.render(
     <App />,
